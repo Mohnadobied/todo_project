@@ -1,4 +1,4 @@
-function dataList(e,f,g,h){
+function dataList(e,f,g){
 let  userName = prompt("Please Enter Your Name");
 console.log(`${userName}`);
 
@@ -23,9 +23,11 @@ if (age <= 0)
     console.log("Less than or equal to zero") 
 }
 
-console.log(age);  
+console.log(age);
+return [userName,age,gender];
 }
-function VerifyYourData(j){
+
+function VerifyYourData(arr){
 let Verify = confirm("You wanna skip Welcoming message")
 if (Verify == true)
 {
@@ -33,19 +35,20 @@ if (Verify == true)
 } 
 else if (Verify == false)
 {
-    alert(`Welcome ${userName} ${age} ${gender}`)
+    alert(`Welcome ${arr[0]} ${arr[1]} ${arr[2]}`)
 }
 }
 
-function yesNoQuestions(a,b,c){
+
+function yesNoQuestions(){
 let qusetion1 = prompt("Do you like to rate us?  yes/no")
 if (qusetion1 == "yes" || qusetion1 == "Yes")
 {
-    console.log(qusetion1);
+console.log(qusetion1);
 }
 else if (qusetion1 == "no" || qusetion1 == "No")
 {
-console.log("Invalid");
+console.log(qusetion1);
 }
 else
 console.log("Invalid");
@@ -57,7 +60,7 @@ if (qusetion2 == "yes" || qusetion2 == "Yes")
 }
 else if (qusetion2 == "no" || qusetion2 == "No")
 {
-console.log("Invalid");
+console.log(qusetion2);
 }
 else
 console.log("Invalid");
@@ -69,18 +72,20 @@ if (qusetion3 == "yes" || qusetion3 == "Yes")
 }
 else if (qusetion3 == "no" || qusetion3 == "No")
 {
-console.log("Invalid");
+console.log(qusetion3);
 }
 else
 console.log("Invalid");
+return [qusetion1,qusetion2,qusetion3]
 }
 
-function saveInArr(i){
-let questions = [qusetion1,qusetion2,qusetion3];
-console.log(questions)
+function save(arr2)
+{
+console.log(arr2)
 }
 
-dataList()
-VerifyYourData()
-yesNoQuestions()
-saveInArr()
+arr = dataList()
+VerifyYourData(arr)
+arr2 = yesNoQuestions()
+save(arr2)
+
